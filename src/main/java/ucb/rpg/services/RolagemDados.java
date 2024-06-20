@@ -17,7 +17,7 @@ public class RolagemDados {
         int rolagem2 = rolarD20();
         System.out.println("Rolagem com Vantagem: Dado 1 = " + rolagem1 + ", Dado 2 = " + rolagem2);
         int resultado = Math.max(rolagem1, rolagem2);
-        System.out.printf("Resultado: %s %s %n", resultado, getTexto(resultado));
+        System.out.printf("Resultado: %s %s %n%n", resultado, getTexto(resultado));
         return resultado;
     }
 
@@ -26,7 +26,7 @@ public class RolagemDados {
         int rolagem2 = rolarD20();
         System.out.println("Rolagem com Desvantagem: Dado 1 = " + rolagem1 + ", Dado 2 = " + rolagem2);
         int resultado = Math.min(rolagem1, rolagem2);
-        System.out.printf("Resultado: %s %s %n", resultado, getTexto(resultado));
+        System.out.printf("Resultado: %s %s %n%n", resultado, getTexto(resultado));
         return resultado;
     }
 

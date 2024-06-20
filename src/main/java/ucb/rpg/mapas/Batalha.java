@@ -27,8 +27,6 @@ public class Batalha {
                 throw new RuntimeException(e);
             }
         }
-//        }
-//        atacante.mostrarHabilidades(alvo);
     }
 
     private static boolean isInimigo(Personagem atacante){

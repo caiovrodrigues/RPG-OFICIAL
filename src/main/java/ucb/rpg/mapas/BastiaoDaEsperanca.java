@@ -3,8 +3,6 @@ package ucb.rpg.mapas;
 import ucb.rpg.classes.util.Caracteristica;
 import ucb.rpg.classes.util.Personagem;
 import ucb.rpg.inimigos.Feiticeiro;
-import ucb.rpg.inimigos.Gownther;
-import ucb.rpg.inimigos.Saqueador;
 import ucb.rpg.services.RolagemDados;
 
 import java.util.List;
@@ -27,6 +25,7 @@ public class BastiaoDaEsperanca extends Mapa{
 
         System.out.print("Escolha: ");
         escolha = sc.nextInt();
+        System.out.println();
 
         if(escolha == 1){
             interacao1();
@@ -42,6 +41,7 @@ public class BastiaoDaEsperanca extends Mapa{
         System.out.println("Você decide ajudar o vendedor e vai atrás dos ladrões. \nApós uma breve investigação, descobre que eles estão escondidos em uma cabana isolada no acampamento.");
         System.out.println("Ao chegar na cabana, você enfrenta uma luta fora e dentro da cabana.");
 
+        System.out.print("\nPressione enter para rolar o dado...");
         sc.nextLine();
         sc.nextLine();
 
@@ -60,7 +60,7 @@ public class BastiaoDaEsperanca extends Mapa{
             System.out.println("Você derrota o zumbi com um golpe magistral, saindo ileso.");
         }
 
-        sc.nextLine();
+//        sc.nextLine();
         //luta dentro:
         //Dado.rolar();
 
@@ -80,9 +80,6 @@ public class BastiaoDaEsperanca extends Mapa{
     private void interacao2() {
         Batalha.batalhar(jogador, new Feiticeiro());
     }
-
-
-
 
     private void moduloFinal() {
         System.out.println("\nApós retornar à loja com o artefato, o vendedor propõe um quiz. Se acertar, ganha um item da loja.");

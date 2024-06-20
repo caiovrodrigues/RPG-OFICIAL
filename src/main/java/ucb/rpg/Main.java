@@ -6,6 +6,37 @@ import ucb.rpg.mapas.BastiaoDaEsperanca;
 
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println("""
+                 _____                                           _____\s
+                ( ___ )-----------------------------------------( ___ )
+                 |   |            _                              |   |\s
+                 |   |           | |    ___  _ __ ___            |   |\s
+                 |   |           | |   / _ \\| '__/ _ \\           |   |\s
+                 |   |           | |__| (_) | | |  __/           |   |\s
+                 |   |           |_____\\___/|_|  \\___|           |   |\s
+                 |___|                                           |___|\s
+                (_____)-----------------------------------------(_____)
+                """);
+        System.out.println("""
+                Após um demônio ancestral, Gðwnthër, voltar a ascensão trazendo consigo uma horda crescente de
+                outros demônios inferiores chamados de Besatt’s, dos quais os comportamentos lembram muito os de zumbis…
+                Você (nome do mano), (nome da raça) sobrevivente do (nome do acampamento) tem a opção de, tentar trazer a paz de volta se livrando de Gðwnthër,
+                ou apenas tentar viver os restos dos seus dias de maneira pacífica, você escolhe.
+                """);
+
+        System.out.println("""
+                1 - Ladino
+                2 - Bárbaro
+                3 - Paladino
+                4 - Arqueiro
+                5 - Mago
+                6 - Guerreiro
+                """);
+
+        System.out.print("Escolha: ");
+
+
         Personagem arqueiro = new Arqueiro();
 
         var mapaBastiao = new BastiaoDaEsperanca(arqueiro);
