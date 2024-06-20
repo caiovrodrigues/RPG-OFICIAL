@@ -1,11 +1,20 @@
 package ucb.rpg;
 
-import ucb.rpg.classes.Arqueiro;
+import ucb.rpg.classes.*;
 import ucb.rpg.classes.util.Personagem;
 import ucb.rpg.mapas.BastiaoDaEsperanca;
+import ucb.rpg.mapas.Mapa;
+import ucb.rpg.mapas.RefugioDosRenegados;
+import ucb.rpg.mapas.SantuarioDosSobreviventes;
+
+import java.util.Scanner;
 
 public class Main {
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+
+        Personagem personagem;
+        Mapa mapa;
 
         System.out.println("""
                  _____                                           _____\s
@@ -25,6 +34,9 @@ public class Main {
                 ou apenas tentar viver os restos dos seus dias de maneira pacífica, você escolhe.
                 """);
 
+        System.out.print("Pressione enter para continuar...");
+        scanner.nextLine();
+
         System.out.println("""
                 1 - Ladino
                 2 - Bárbaro
@@ -35,13 +47,35 @@ public class Main {
                 """);
 
         System.out.print("Escolha: ");
+        int escolhaPersonagem = scanner.nextInt();
 
+        personagem = switch (escolhaPersonagem){
+            case 1 -> new Ladino();
+            case 2 -> new Barbaro();
+            case 3 -> new Paladino();
+            case 4 -> new Arqueiro();
+            case 5 -> new Mago();
+            case 6 -> new Guerreiro();
+            default -> throw new RuntimeException("Erro ao escolher personagem.");
+        };
 
-        Personagem arqueiro = new Arqueiro();
+        System.out.println("""
+                1 - Refúgio dos Renegados
+                2 - Bastião da Esperança
+                3 - Santuário dos sobreviventes
+                """);
 
-        var mapaBastiao = new BastiaoDaEsperanca(arqueiro);
+        System.out.print("Escolha: ");
+        int escolhaMapa = scanner.nextInt();
 
-        mapaBastiao.start();
+        mapa = switch (escolhaMapa){
+            case 1 -> new RefugioDosRenegados(personagem);
+            case 2 -> new BastiaoDaEsperanca(personagem);
+            case 3 -> new SantuarioDosSobreviventes(personagem);
+            default -> throw new RuntimeException("Erro ao escolher mapa.");
+        };
+
+        mapa.start();
 
     }
 }
