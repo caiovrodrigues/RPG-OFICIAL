@@ -4,6 +4,8 @@ package ucb.rpg.inimigos;
 import ucb.rpg.classes.util.Caracteristica;
 import ucb.rpg.classes.util.Personagem;
 
+import java.util.Random;
+
 public class Mauricio extends Personagem {
 
     public Mauricio() {
@@ -43,21 +45,28 @@ public class Mauricio extends Personagem {
             System.out.println(getNome() + " não tem mana suficiente para usar Rajada de Sombras.");
             atacar(alvo);
         }
-    
-    @Override
-    public void mostrarHabilidades(Personagem alvo) {
 
     }
 
     @Override
-    public void habilidade1(Personagem alvo) {
+    public void mostrarHabilidades (Personagem alvo){
+        Random random = new Random();
+        boolean aleatorio = random.nextBoolean();
+
+        if(aleatorio){
+            golpeSombrio(alvo);
+        }else{
+            rajadaDeSombras(alvo);
+        }
+    }
+
+    @Override
+    public void habilidade1 (Personagem alvo){
 
     }
 
     @Override
-    public void habilidade2(Personagem alvo) {
+    public void habilidade2 (Personagem alvo){
 
     }
-
 }
-

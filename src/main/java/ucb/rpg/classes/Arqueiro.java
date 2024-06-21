@@ -37,6 +37,16 @@ public class Arqueiro extends Personagem {
         }
     }
 
+    @Override
+    public void habilidade1(Personagem alvo) {
+
+    }
+
+    @Override
+    public void habilidade2(Personagem alvo) {
+
+    }
+
     public void encheORaboDeFlechas(Personagem alvo) {
         int flechasRequeridas = 4;
         if (flechas >= flechasRequeridas) {
