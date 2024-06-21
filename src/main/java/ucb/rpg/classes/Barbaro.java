@@ -13,7 +13,8 @@ public class Barbaro extends Personagem {
         this.stun = false;
     }
 
-    public void usarHabilidadeEspecial(Personagem alvo) {
+    @Override
+    public void mostrarHabilidades(Personagem alvo) {
         System.out.println("Escolha a habilidade a ser utilizada:");
         System.out.println("1. Tacar Machado");
         System.out.println("2. Stun");
@@ -35,26 +36,6 @@ public class Barbaro extends Personagem {
         }
     }
 
-    @Override
-    public void mostrarHabilidades(Personagem alvo) {
-
-    }
-
-    @Override
-    public void habilidade1(Personagem alvo) {
-//        int dano = 20;
-//        System.out.println(nome + " tacou um machado em " + alvo.getNome() + " causando " + dano + " de dano.");
-//        alvo.receberDano(dano);
-    }
-
-    @Override
-    public void habilidade2(Personagem alvo) {
-        this.stun = true;
-        System.out.println(nome + " ganhou um turno adicional.");
-    }
-
-
-
     public void tacarMachado(Personagem alvo) {
         int dano = 20;
         System.out.println(nome + " tacou um machado em " + alvo.getNome() + " causando " + dano + " de dano.");
@@ -65,6 +46,18 @@ public class Barbaro extends Personagem {
         this.stun = true;
         System.out.println(nome + " ganhou um turno adicional.");
     }
+
+    @Override
+    public void habilidade1(Personagem alvo) {
+
+    }
+
+    @Override
+    public void habilidade2(Personagem alvo) {
+
+    }
+
+
 
     public boolean isStun() {
         return stun;

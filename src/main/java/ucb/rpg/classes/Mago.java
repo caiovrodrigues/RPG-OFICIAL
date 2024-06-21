@@ -10,7 +10,8 @@ public class Mago extends Personagem {
         super("Mago", Caracteristica.INTELIGENCIA, Caracteristica.FORCA, 70, 50, 100, 40);
     }
 
-    public void usarHabilidadeEspecial(Personagem alvo) {
+    @Override
+    public void mostrarHabilidades(Personagem alvo) {
         System.out.println("Escolha a habilidade a ser utilizada:");
         System.out.println("1. Bola de Fogo (consume 30 de mana)");
         System.out.println("2. Bola de Raio (consume 20 de mana)");
@@ -57,11 +58,6 @@ public class Mago extends Personagem {
         int dano = 20;
         System.out.println(nome + " conjura um Raio em " + alvo.getNome() + ", causando " + dano + " de dano.");
         alvo.receberDano(dano);
-    }
-
-    @Override
-    public void mostrarHabilidades(Personagem alvo) {
-
     }
 
     @Override

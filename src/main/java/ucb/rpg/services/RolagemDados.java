@@ -37,7 +37,7 @@ public class RolagemDados {
         if(personagem.getDesvantagem().equals(caracteristica)){
             return rolarComDesvantagem();
         }
-        return rolarD20();
+        return rolarComDesvantagem();
     }
 
     private static String getTexto(Integer num){
@@ -49,4 +49,53 @@ public class RolagemDados {
         };
     }
 
+    public static boolean pedraPapelTesoura(int escolha) {
+        //1 - Pedra
+        //2 - Papel
+        //3 - Tesoura
+        int escolhaInimiga = random.nextInt(1, 3);
+
+        boolean venceu = false;
+
+        if(escolha == 1){
+            if(escolhaInimiga == 1){
+                System.out.println("Empate!!!!");
+                System.out.println("Sua escolha foi pedra e o inimigo escolheu também pedra");
+            }else if(escolhaInimiga == 2){
+                System.out.println("Perdeu!!!!");
+                System.out.println("Sua escolha foi pedra e o inimigo escolheu papel");
+            }else{
+                System.out.println("Vitória!!!!");
+                System.out.println("Sua escolha foi pedra e o inimigo escolheu tesoura");
+                venceu = true;
+            }
+        }
+        if(escolha == 2){
+            if(escolhaInimiga == 1){
+                System.out.println("Vitória!!!!");
+                System.out.println("Sua escolha foi papel e o inimigo escolheu pedra");
+                venceu = true;
+            }else if(escolhaInimiga == 2){
+                System.out.println("Empate!!!!");
+                System.out.println("Sua escolha foi papel e o inimigo escolheu também papel");
+            }else{
+                System.out.println("Perdeu!!!!");
+                System.out.println("Sua escolha foi papel e o inimigo escolheu tesoura");
+            }
+        }
+        if(escolha == 3){
+            if(escolhaInimiga == 1){
+                System.out.println("Perdeu!!!!");
+                System.out.println("Sua escolha foi tesoura e o inimigo escolheu também pedra");
+            }else if(escolhaInimiga == 2){
+                System.out.println("Vitória!!!!");
+                System.out.println("Sua escolha foi tesoura e o inimigo escolheu papel");
+                venceu = true;
+            }else{
+                System.out.println("Empate!!!!");
+                System.out.println("Sua escolha foi tesoura e o inimigo escolheu também tesoura");
+            }
+        }
+        return venceu;
+    }
 }

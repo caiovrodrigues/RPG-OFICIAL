@@ -35,13 +35,9 @@ public abstract class Personagem {
     }
 
     public void receberDano(int dano) {
-        int danoRecebido = Math.max(dano - defesa, 0); 
+        int danoRecebido = Math.max(dano - defesa, 5);
         vida -= danoRecebido;
         System.out.println(nome + " recebeu " + danoRecebido + " de dano. Vida restante: " + vida);
-        if (vida <= 0) {
-            estaVivo = false;
-            System.out.println(nome + " foi derrotado.");
-        }
     }
 
     public boolean estaVivo() {
@@ -77,8 +73,32 @@ public abstract class Personagem {
         return vida;
     }
 
-    public void setVida(int vida) {
-        this.vida = vida;
+    public void aumentarVida(int vida) {
+        this.vida += vida;
+    }
+
+    public void diminuirVida(int vida) {
+        this.vida = this.vida < vida ? 0 : this.vida - vida;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public int getForca() {
+        return forca;
+    }
+
+    public void setForca(int forca) {
+        this.forca = forca;
+    }
+
+    public int getDefesa() {
+        return defesa;
+    }
+
+    public void setDefesa(int defesa) {
+        this.defesa = defesa;
     }
 
     public abstract void mostrarHabilidades(Personagem alvo);

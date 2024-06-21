@@ -10,7 +10,7 @@ public class Arqueiro extends Personagem {
     private int flechas;
 
     public Arqueiro() {
-        super("Arqueiro", Caracteristica.DESTREZA, Caracteristica.FORCA, 85, 70, 40, 65);
+        super("Arqueiro", Caracteristica.DESTREZA, Caracteristica.FORCA, 85, 70, 40, 20);
         this.flechas = 20;
     }
 

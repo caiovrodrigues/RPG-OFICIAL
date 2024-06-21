@@ -7,13 +7,14 @@ import java.util.Scanner;
 
 public class Paladino extends Personagem {
 
-    private int cura;
+    private int cura = 10;
 
     public Paladino() {
-        super("Paladino", Caracteristica.NENHUMA, Caracteristica.NENHUMA, 90, 75, 60, 80);
+        super("Paladino", Caracteristica.NENHUMA, Caracteristica.NENHUMA, 90, 75, 60, 20);
     }
 
-    public void usarHabilidadeEspecial(Personagem alvo) {
+    @Override
+    public void mostrarHabilidades(Personagem alvo) {
         System.out.println("Escolha a habilidade a ser utilizada:");
         System.out.println("1. Curar");
         System.out.println("2. Atacar");
@@ -41,14 +42,9 @@ public class Paladino extends Personagem {
         if (vida > 90) {
             vida = 90;
         }
-        System.out.println("Vida atual: " + vida);
+        System.out.printf("Vida atual: %d -> %d", vida - 10, vida);
     }
 
-
-    @Override
-    public void mostrarHabilidades(Personagem alvo) {
-
-    }
 
     @Override
     public void habilidade1(Personagem alvo) {

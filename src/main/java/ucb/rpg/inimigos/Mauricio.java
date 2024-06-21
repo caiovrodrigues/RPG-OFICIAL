@@ -12,6 +12,18 @@ public class Mauricio extends Personagem {
         super("Mauricio", Caracteristica.NENHUMA, Caracteristica.NENHUMA, 100, 50, 30, 0);
     }
 
+    @Override
+    public void mostrarHabilidades (Personagem alvo){
+        Random random = new Random();
+        boolean aleatorio = random.nextBoolean();
+
+        if(aleatorio){
+            golpeSombrio(alvo);
+        }else{
+            rajadaDeSombras(alvo);
+        }
+    }
+
     public void golpeSombrio(Personagem alvo) {
         int manaRequerida = 20;
         if (getMana() >= manaRequerida) {
@@ -48,17 +60,7 @@ public class Mauricio extends Personagem {
 
     }
 
-    @Override
-    public void mostrarHabilidades (Personagem alvo){
-        Random random = new Random();
-        boolean aleatorio = random.nextBoolean();
 
-        if(aleatorio){
-            golpeSombrio(alvo);
-        }else{
-            rajadaDeSombras(alvo);
-        }
-    }
 
     @Override
     public void habilidade1 (Personagem alvo){

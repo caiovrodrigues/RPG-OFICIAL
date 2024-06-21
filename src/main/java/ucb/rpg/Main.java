@@ -28,9 +28,9 @@ public class Main {
                 (_____)-----------------------------------------(_____)
                 """);
         System.out.println("""
-                Após um demônio ancestral, Gðwnthër, voltar a ascensão trazendo consigo uma horda crescente de
+                Após um demônio ancestral, Maurício, voltar a ascensão trazendo consigo uma horda crescente de
                 outros demônios inferiores chamados de Besatt’s, dos quais os comportamentos lembram muito os de zumbis…
-                Você (nome do mano), (nome da raça) sobrevivente do (nome do acampamento) tem a opção de, tentar trazer a paz de volta se livrando de Gðwnthër,
+                Você, sobrevivente do acampamento tem a opção de, tentar trazer a paz de volta se livrando de Maurício,
                 ou apenas tentar viver os restos dos seus dias de maneira pacífica, você escolhe.
                 """);
 
@@ -60,19 +60,17 @@ public class Main {
         };
 
         System.out.println("""
-                1 - Refúgio dos Renegados
-                2 - Bastião da Esperança
-                3 - Santuário dos sobreviventes
+                1 - Bastião da Esperança
+                2 - Refúgio dos Renegados
                 """);
 
         System.out.print("Escolha: ");
         int escolhaMapa = scanner.nextInt();
 
         mapa = switch (escolhaMapa){
-            case 1 -> new RefugioDosRenegados(personagem);
-            case 2 -> new BastiaoDaEsperanca(personagem);
-            case 3 -> new SantuarioDosSobreviventes(personagem);
-            default -> throw new RuntimeException("Erro ao escolher mapa.");
+            case 1 -> new BastiaoDaEsperanca(personagem);
+            case 2 -> new RefugioDosRenegados(personagem);
+            default -> new BastiaoDaEsperanca(personagem);
         };
 
         mapa.start();

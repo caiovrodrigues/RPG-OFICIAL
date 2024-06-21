@@ -10,8 +10,9 @@ public class Guerreiro extends Personagem {
     public Guerreiro() {
         super("Guerreiro", Caracteristica.FORCA, Caracteristica.DESTREZA, 95, 85, 50, 75);
     }
-    
-    public void usarHabilidadeEspecial(Personagem alvo) {
+
+    @Override
+    public void mostrarHabilidades(Personagem alvo) {
         System.out.println("Escolha a habilidade a ser utilizada:");
         System.out.println("1. Quebra o Chão (consume 25 de mana)");
         System.out.println("2. Habilidade defensiva (cura ou armadura, consome 20 de mana)");
@@ -58,11 +59,6 @@ public class Guerreiro extends Personagem {
         int aumentoVida = 30;
         vida += aumentoVida;
         System.out.println(getNome() + " usa uma habilidade defensiva, ganhando " + aumentoVida + " de vida. Vida atual: " + vida);
-    }
-
-    @Override
-    public void mostrarHabilidades(Personagem alvo) {
-
     }
 
     @Override

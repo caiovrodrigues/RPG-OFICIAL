@@ -13,7 +13,8 @@ public class Ladino extends Personagem {
         this.invisivel = false;
     }
 
-    public void usarHabilidadeEspecial(Personagem alvo) {
+    @Override
+    public void mostrarHabilidades(Personagem alvo) {
         System.out.println("Escolha a habilidade a ser utilizada:");
         System.out.println("1. Tacar Faca");
         System.out.println("2. Ficar Invisível");
@@ -59,10 +60,7 @@ public class Ladino extends Personagem {
         }
     }
 
-    @Override
-    public void mostrarHabilidades(Personagem alvo) {
 
-    }
 
     @Override
     public void habilidade1(Personagem alvo) {
