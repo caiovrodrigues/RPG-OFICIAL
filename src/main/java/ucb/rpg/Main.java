@@ -13,7 +13,6 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
-        Personagem personagem;
         Mapa mapa;
 
         System.out.println("""
@@ -37,27 +36,7 @@ public class Main {
         System.out.print("Pressione enter para continuar...");
         scanner.nextLine();
 
-        System.out.println("""
-                1 - Ladino
-                2 - Bárbaro
-                3 - Paladino
-                4 - Arqueiro
-                5 - Mago
-                6 - Guerreiro
-                """);
-
-        System.out.print("Escolha: ");
-        int escolhaPersonagem = scanner.nextInt();
-
-        personagem = switch (escolhaPersonagem){
-            case 1 -> new Ladino();
-            case 2 -> new Barbaro();
-            case 3 -> new Paladino();
-            case 4 -> new Arqueiro();
-            case 5 -> new Mago();
-            case 6 -> new Guerreiro();
-            default -> throw new RuntimeException("Erro ao escolher personagem.");
-        };
+        Personagem personagem = mostrarEscolhaPersonagem();
 
         System.out.println("""
                 1 - Bastião da Esperança
@@ -76,109 +55,46 @@ public class Main {
         mapa.start();
 
     }
-}
-    	/*
-        Personagem ladino = new Ladino();
-        Personagem barbaro = new Barbaro();
-        Personagem paladino = new Paladino();
-        Personagem arqueiro = new classes.Arqueiro();
-        Personagem mago = new Mago();
-        Personagem guerreiro = new Guerreiro();
 
-        System.out.println("Exibindo atributos e realizando testes para cada personagem:\n");
+    private static Personagem mostrarEscolhaPersonagem(){
+        Personagem personagem;
+        System.out.println("""
+                
+                1 - Ladino
+                2 - Bárbaro
+                3 - Paladino
+                4 - Arqueiro
+                5 - Mago
+                6 - Guerreiro
+                """);
 
-        ladino.exibirAtributos();
-        ladino.("destreza");
-        ladino.realizarTeste("forca");
-        System.out.println();
+        System.out.print("Escolha: ");
+        int escolha = scanner.nextInt();
 
-        barbaro.exibirAtributos();
-        barbaro.realizarTeste("inteligencia");
-        System.out.println();
+        personagem = switch (escolha){
+            case 1 -> new Ladino();
+            case 2 -> new Barbaro();
+            case 3 -> new Paladino();
+            case 4 -> new Arqueiro();
+            case 5 -> new Mago();
+            case 6 -> new Guerreiro();
+            default -> throw new RuntimeException("Erro ao escolher personagem.");
+        };
 
-        paladino.exibirAtributos();
-        paladino.realizarTeste("destreza");
-        System.out.println();
+        System.out.printf("%-10s%-6s%-7s%-5s%-5s%-13s%-12s%n", "NOME", "FORÇA", "DEFESA", "MANA", "VIDA", "VANTAGEM", "DESVANTAGEM");
+        System.out.println(personagem);
 
-        arqueiro.exibirAtributos();
-        arqueiro.realizarTeste("destreza");
-        arqueiro.realizarTeste("forca");
-        System.out.println();
+        System.out.println("1 - Confirmar personagem");
+        System.out.println("0 - Voltar");
 
-        mago.exibirAtributos();
-        mago.realizarTeste("inteligencia");
-        mago.realizarTeste("forca");
-        mago.realizarTeste("destreza");
-        System.out.println();
+        System.out.print("Escolha: ");
+        int confirmaPersonagem = scanner.nextInt();
 
-        guerreiro.exibirAtributos();
-        guerreiro.realizarTeste("forca");
-        guerreiro.realizarTeste("destreza");
-        System.out.println();
+        if(confirmaPersonagem != 1){
+            mostrarEscolhaPersonagem();
+        }
+        return personagem;
+
     }
 }
 
-   
-        
-        
-        
-
-    /*public void executarBatalha() {
-        classes.Arqueiro arqueiro = new classes.Arqueiro();
-        Gownther gownther = new Gownther();
-
-        Scanner scanner = new Scanner(System.in);
-
-    
-        System.out.println("Você é o classes.Arqueiro e vai enfrentar Gðwnthër!");
-        
-        System.out.println(arqueiro);
-        System.out.println(gownther);
-        
-
-        while (arqueiro.estaVivo() && gownther.estaVivo()) {
-            System.out.println("Escolha uma habilidade:");
-            System.out.println("1. Enche o rabo de flechas");
-            System.out.println("2. Flecha potente");
-            System.out.print("Escolha: ");
-
-            int escolha = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (escolha) {
-                case 1:
-                    arqueiro.encheORaboDeFlechas(gownther);
-                    break;
-                case 2:
-                    arqueiro.flechaPotente(gownther);
-                    break;
-                default:
-                    System.out.println("Escolha inválida. Escolha novamente.");
-                    continue;
-            }
-
-            if (gownther.estaVivo()) {
-                gownther.chamaInfernal(arqueiro);
-                gownther.furiaDemoniaca();
-            }
-
-            System.out.println("------------------------------");
-            System.out.println(arqueiro);
-            System.out.println(gownther);
-            System.out.println("------------------------------");
-        }
-
-        if (!gownther.estaVivo()) {
-            System.out.println("Gðwnthër foi derrotado! Parabéns!");
-        } else {
-            System.out.println("Infelizmente, Gðwnthër foi forte demais");
-        }
-
-        scanner.close();
-    }
-}
-*/
-
-
-        
-        

@@ -115,14 +115,6 @@ public abstract class Personagem {
 
     @Override
     public String toString() {
-        return "Personagem{" +
-                "nome='" + nome + '\'' +
-                ", vida=" + vida +
-                ", mana=" + mana +
-                ", forca=" + forca +
-                ", defesa=" + defesa +
-                ", estaVivo=" + estaVivo +
-                ", aumentoAtaque=" + aumentoAtaque +
-                '}';
+        return "%-10s%-6s%-7s%-5s%-5s%-13s%-12s%n".formatted(nome, forca, defesa, mana, vida, vantagem, desvantagem);
     }
 }
